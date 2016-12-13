@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<PropertyList>
+  
+	<particlesystem>
+		<name>exhaust</name>
+		<texture>exhaust.png</texture>
+		<emissive>false</emissive>
+		<lighting>false</lighting>
+    
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>95</pitch-deg>
+			<roll-deg>95</roll-deg>
+		</offsets>
+    
+		<condition>
+			<and>
+				<less-than-equals>
+					<property>velocities/airspeed-kt</property><!--  velocities/airspeed-kt -->
+					<!--value>200</value-->
+					<value>275</value>
+				</less-than-equals>
+				<greater-than>
+					<!-- engines/engine[0]/n2 -->
+					<property>engines/engine[0]/n2</property>
+					<value>27</value>
+				</greater-than>
+			</and>
+		</condition>
+    
+		<attach>world</attach>
+    
+		<placer>
+			<type>point</type>
+		</placer>
+    
+		<shooter>
+			<theta-min-deg>-16</theta-min-deg>
+			<theta-max-deg>16</theta-max-deg>
+			<phi-min-deg>-16</phi-min-deg>
+			<phi-max-deg>16</phi-max-deg>
+			<speed-mps>
+				<property>engines/engine[0]/n1</property><!-- engines/engine[0]/n1 -->
+				<factor>5</factor>
+				<spread>3850</spread>
+			</speed-mps>
+			<rotation-speed>
+				<x-min-deg-sec>4</x-min-deg-sec>
+				<y-min-deg-sec>5</y-min-deg-sec>
+				<z-min-deg-sec>4</z-min-deg-sec>
+				<x-max-deg-sec>95</x-max-deg-sec>
+				<y-max-deg-sec>95</y-max-deg-sec>
+				<z-max-deg-sec>95</z-max-deg-sec>
+			</rotation-speed>
+		</shooter>
+    
+		<counter>
+			<particles-per-sec>
+			<value>11</value>
+			<spread>5</spread>
+			</particles-per-sec>
+		</counter>
+    
+		<align>billboard</align>
+  
+		<particle>
+			<start>
+				<color>
+					<red>
+						<expression>
+							<product>
+								<value>0.7</value>
+								<property>/rendering/scene/diffuse/red</property>
+							</product>
+						</expression>
+					</red>
+					<green>
+						<expression>
+							<product>
+								<value>0.8</value>
+								<property>/rendering/scene/diffuse/red</property>
+							</product>
+						</expression>
+					</green>
+					<blue>
+						<expression>
+							<product>
+								<value>1</value>
+								<property>/rendering/scene/diffuse/red</property>
+							</product>
+						</expression>
+					</blue>
+					<alpha>
+						<value>0.11</value>
+					</alpha>
+				</color>
+				<size>
+					<value>0.8</value>
+				</size>
+			</start>
+			<end>
+				<color>
+					<red>
+						<expression>
+							<product>
+								<value>0.7</value>
+								<property>/rendering/scene/diffuse/red</property>
+							</product>
+						</expression>
+					</red>
+					<green>
+						<expression>
+							<product>
+								<value>0.8</value>
+								<property>/rendering/scene/diffuse/red</property>
+							</product>
+						</expression>
+					</green>
+					<blue>
+						<expression>
+							<product>
+								<value>1.0</value>
+								<property>/rendering/scene/diffuse/red</property>
+							</product>
+						</expression>
+					</blue>
+					<alpha>
+						<value>0.009</value>
+					</alpha>
+				</color>
+				<size>
+					<value>8</value>
+				</size>
+			</end>
+			<life-sec>
+				<value>5.0</value>
+			</life-sec>
+			<mass-kg>0.00001</mass-kg>
+			<radius-m>0.014</radius-m>
+		</particle>
+    
+		<program>
+			<fluid>air</fluid>
+			<gravity type="bool">true</gravity>
+			<wind type="bool">true</wind>
+		</program>
+    
+	</particlesystem>
+  
+</PropertyList>

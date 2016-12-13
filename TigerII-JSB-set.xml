@@ -1,0 +1,1271 @@
+<?xml version="1.0"?>
+
+<!--
+************************************************************************
+Peter Brendt (JWocky) (refurbish for FG 2016 and USA Tour)
+
+based on the works of
+
+David Culp,  davidculp2@comcast.net (FDM, 3D)
+Isaias Prestes (Cockpit)
+
+in the F-5E
+
+************************************************************************
+-->
+
+<PropertyList>
+
+	<sim>
+
+		<description>Northrop F-5E Tiger II </description>
+		<author>David Culp (FDM, 3D)</author>
+		<author>Isaias Prestes (Cockpit)</author>
+		<author>Peter Brendt aka JWocky (refurbish for FG 2016)</author>
+
+		<status>early production</status>
+		<rating>
+			<FDM type="int">     3 </FDM>
+			<systems type="int"> 1 </systems>
+			<cockpit type="int"> 1 </cockpit>
+			<model type="int">   2 </model>
+		</rating>
+
+		<flight-model>jsb</flight-model>
+		<aero>Aero/F-5E-jsbsim</aero>
+		<variant>F-5E</variant>
+
+		<startup>
+			<splash-texture>Aircraft/TigerII-JSB/Splashes/splash2.png</splash-texture>
+			<splash-texture>Aircraft/TigerII-JSB/Splashes/splash1.png</splash-texture>
+		</startup>
+
+		<model>
+			<path>Aircraft/TigerII-JSB/Models/TigerII.xml</path>
+			<livery>
+				<file type="string">Default</file>
+			</livery>
+			<wings>
+				<file type="string">Default</file>
+			</wings>
+			<turbine>
+				<file type="string">Default</file>
+			</turbine>
+			<fueltk>
+				<file type="string">Default</file>
+			</fueltk>
+
+			<!-- Add pushback -->
+			<pushback>
+				<kp type="double">100</kp>
+				<ki type="double">25</ki>
+				<kd type="double">0</kd>
+				<position-norm type="double">1</position-norm>
+				<enabled type="bool">false</enabled>
+			</pushback>
+
+		</model>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/TigerII-JSB/Models/submodels.xml</path>
+		</submodels>
+
+		<!-- basic startup settings for sim -->
+		<freeze>
+			<fuel>false</fuel>	<!-- false is default -->
+		</freeze>
+
+		<fuel-fraction>0.8</fuel-fraction>
+
+		<chase-distance-m>-18</chase-distance-m>
+
+		<sound>
+			<path>Aircraft/TigerII-JSB/Sounds/F-5E-sound.xml</path>
+		</sound>
+
+		<autostart>
+			<started>0</started>
+		</autostart>
+
+		<allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+
+		<panel>
+			<visibility archive="y">false</visibility>
+		</panel>
+
+		<flaps>
+			<!-- UP -->
+			<setting>0.000</setting>
+			<!-- CRUISE -->
+			<setting>0.400</setting>
+			<!-- COMBAT1 -->
+			<setting>0.400</setting>
+			<!-- COMBAT2 -->
+			<setting>0.800</setting>
+			<!-- TO/LANDING -->
+			<setting>1.000</setting>
+		</flaps>
+
+		<slats>
+			<!-- UP -->
+			<setting>0.000</setting>
+			<!-- CRUISE -->
+			<setting>0.000</setting>
+			<!-- COMBAT1 -->
+			<setting>0.5</setting>
+			<!-- COMBAT2 -->
+			<setting>0.750</setting>
+			<!-- TO/LANDING -->
+			<setting>1.000</setting>
+		</slats>
+
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+
+		<!-- Head-up display settings -->
+		<hud>
+			<path>Aircraft/TigerII-JSB/Models/Instruments/Hud/default.xml</path>
+			<path>Aircraft/TigerII-JSB/Models/Instruments/Hud/NTPS.xml</path>
+			<visibility type="bool">false</visibility>
+			<visibility type="bool">true</visibility>
+	
+		</hud>
+
+		<rendering>
+			<redout>
+				<parameters>
+					<blackout-onset-g>7.5</blackout-onset-g>
+					<blackout-complete-g>9.1</blackout-complete-g>
+				</parameters>
+			</redout>
+		</rendering>
+
+		<!-- VIEWS -->
+		<view n="0">
+			<name>Pilot view</name>
+			<internal archive="y">true</internal>
+			<config>
+				<!-- x/y/z == (esquerda, direita)/(cima, baixo)/(frente, tras) -->
+				<pitch-offset-deg>-5.0</pitch-offset-deg>
+				<x-offset-m archive="y">-0.0005208333333</x-offset-m>
+				<y-offset-m archive="y">0.9525</y-offset-m>
+				<z-offset-m archive="y">-2.6708333333</z-offset-m>
+			</config>
+		</view>
+		
+		
+		<view n="101">
+			<name>Pilot cam</name>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">-0.0005208333333</x-offset-m>
+				<y-offset-m archive="y">0.9525</y-offset-m>
+				<z-offset-m archive="y">-2.9</z-offset-m>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<heading-offset-deg>180</heading-offset-deg>
+				<default-field-of-view-deg>95</default-field-of-view-deg>
+			</config>
+		</view>
+	  
+	  
+		<view n="102">
+			<name>Over the shoulder</name>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<x-offset-m archive="y">0.22</x-offset-m>
+				<y-offset-m archive="y">1.1</y-offset-m>
+				<z-offset-m archive="y">-2.16</z-offset-m>
+				<pitch-offset-deg>-7</pitch-offset-deg>
+				<heading-offset-deg>9</heading-offset-deg>
+				<default-field-of-view-deg>65</default-field-of-view-deg>
+			</config>
+		</view>
+		
+		
+		<view n="1">
+			<name>External view</name>
+			<internal archive="y">false</internal>
+		</view>
+
+		<view n="2">
+			<name>Runway view</name>
+			<internal archive="y">false</internal>
+			<config>
+				<z-offset-m type="double" archive="y">-40.0</z-offset-m>
+				<pitch-offset-deg archive="y"> 12.0</pitch-offset-deg>
+			</config>
+		</view>
+
+		<view n="3">
+			<internal archive="y">false</internal>
+		</view>
+
+		<view n="4">
+			<internal archive="y">false</internal>
+		</view>
+
+		<view n="5">
+			<internal archive="y">false</internal>
+		</view>
+
+		<view n="6">
+			<internal archive="y">false</internal>
+		</view>
+
+		<view n="1500">
+			<name>Tail</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+				<x-offset-m archive="y">-0.002604166667</x-offset-m>
+				<y-offset-m archive="y">3.692873333</y-offset-m>
+				<z-offset-m archive="y">12.72873333</z-offset-m>
+				<pitch-offset-deg>-10</pitch-offset-deg>
+			        <heading-offset-deg type="double">0</heading-offset-deg>
+				<default-field-of-view-deg>88</default-field-of-view-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.20</x-offset-max-m>
+						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.20</x-offset-max-m>
+						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+					</right>
+				</limits>
+			</config>
+		</view>
+
+		<view n="1501">
+			<name>Six view</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<x-offset-m archive="y">0.0</x-offset-m>
+				<y-offset-m archive="y">2.90476</y-offset-m>
+				<z-offset-m archive="y">1.69624</z-offset-m>
+				<pitch-offset-deg>-12</pitch-offset-deg>
+		        <heading-offset-deg type="double">180</heading-offset-deg>
+			</config>
+		</view>
+
+		<view n="1502">
+			<name>Left Wing</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">55</default-field-of-view-deg>
+				<pitch-offset-deg>-8.0</pitch-offset-deg>
+				<heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+				<x-offset-m archive="y"> -2.24805 </x-offset-m> <!--Left/Right -->
+				<y-offset-m archive="y"> -0.074219 </y-offset-m> <!--Up/Down -->
+				<z-offset-m archive="y">  4.08724 </z-offset-m> <!--Fdw/Back -->
+			</config>
+		</view>
+
+		<view n="1503">
+			<name>Right Wing</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">55</default-field-of-view-deg>
+				<pitch-offset-deg>-8.0</pitch-offset-deg>
+				<heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+				<x-offset-m archive="y">  2.24805 </x-offset-m> <!--Left/Right -->
+				<y-offset-m archive="y"> -0.074219 </y-offset-m> <!--Up/Down -->
+				<z-offset-m archive="y">  4.08724 </z-offset-m> <!--Fdw/Back -->
+			</config>
+		</view>
+
+		<view n="1504">
+			<name>Tip Wing</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">45</default-field-of-view-deg>
+				<pitch-offset-deg>-18.0</pitch-offset-deg>
+				<heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+				<x-offset-m archive="y">  4.23144 </x-offset-m> <!--Left/Right -->
+				<y-offset-m archive="y"> 0.132718 </y-offset-m> <!--Up/Down -->
+				<z-offset-m archive="y"> 1.63852 </z-offset-m> <!--Fdw/Back -->
+			</config>
+		</view>
+
+		<view n="1504">
+			<name>Nose Gear</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">91</default-field-of-view-deg>
+				<pitch-offset-deg>-8.0</pitch-offset-deg>
+				<heading-offset-deg type="double">0</heading-offset-deg> <!-- parallel to the panel -->
+				<x-offset-m archive="y">  0.000000 </x-offset-m> <!--Left/Right -->
+				<y-offset-m archive="y"> -0.779873 </y-offset-m> <!--Up/Down -->
+				<z-offset-m archive="y"> -3.06102 </z-offset-m> <!--Fdw/Back -->
+			</config>
+		</view>
+		<!-- END - VIEWS -->
+
+		<airport>
+			<runways>
+				<start-offset-m>10</start-offset-m>
+			</runways>
+		</airport>
+
+		<!-- A aircraft help menu -->
+		<help>
+			<title>Northrop F-5E Tiger II</title>
+			<line>Choose your favorite texture using the F-5E menu</line>
+
+			<key>
+				<name>c (lower case c)</name>
+				<desc>close canopy</desc>
+			</key>
+
+			<key>
+				<name>shift-c</name>
+				<desc>open canopy</desc>
+			</key>
+
+			<key>
+				<name>l (lower case L) </name>
+				<desc>Extend nose gear strut</desc>
+			</key>
+
+			<key>
+				<name>n (lower case n) </name>
+				<desc>Toggle tailhook</desc>
+			</key>
+
+			<key>
+				<name>m (lower case m) </name>
+				<desc>Nose wheel steering</desc>
+			</key>
+
+			<key>
+				<name>S (lower case s)</name>
+				<desc>Toggle starter valves</desc>
+			</key>
+
+			<key>
+				<name>e (lower case e)</name>
+				<desc>Release selected stores</desc>
+			</key>
+
+			<key>
+				<name>d (lower case d)</name>
+				<desc>Deploy drag 'chute</desc>
+			</key>
+
+			<key>
+				<name>j (lower case j)</name>
+				<desc>Jettison drag 'chute</desc>
+			</key>
+
+			<key>
+				<name>1 </name>
+				<desc>Select Stations 1 and 5, deselect others</desc>
+			</key>
+
+			<key>
+				<name>2 </name>
+				<desc>Select Stations 2 and 4, deselect others</desc>
+			</key>
+
+			<key>
+				<name>3 </name>
+				<desc>Select Station 3, deselect others</desc>
+			</key>
+
+			<key>
+				<name>Shift 1 </name>
+				<desc>Select Stations 1 and 5</desc>
+			</key>
+
+			<key>
+				<name>Shift 2 </name>
+				<desc>Select Stations 2 and 4</desc>
+			</key>
+
+			<key>
+				<name>Shift 3 </name>
+				<desc>Select Station 3</desc>
+			</key>
+
+			<key>
+				<name>0 </name>
+				<desc>Deselect All Stations</desc>
+			</key>
+
+			<key>
+				<name>Ctrl-n</name>
+				<desc>Toggles Radar RWS / TWS AUTO Modes</desc>
+			</key>
+			<key>
+				<name>E</name>
+				<desc>Decrease Radar Range</desc>
+			</key>
+			<key>
+				<name>R</name>
+				<desc>Increase Radar Range</desc>
+			</key>
+			<key>
+				<name>q</name>
+				<desc>Toggles Radar Standby Mode</desc>
+			</key>
+
+			<line> </line>
+			<line>Standard load: </line>
+			<line>   Station 1:  unused</line>
+			<line>   Station 2:  unused</line>
+			<line>   Station 3:  unused</line>
+			<line>   Station 4:  unused</line>
+			<line>   Station 5:  unused</line>
+		</help>
+
+		<!-- plane specific menu entries -->
+		<menubar>
+			<default>
+
+				<menu n="3">
+					<item>
+						<name>autopilot</name>
+						<label>Autopilot Settings</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/F-5E/Dialogs/autopilot8_1.xml");
+								autopilot.open();
+							</script>
+						</binding>
+					</item>
+				</menu>
+
+				<menu n="100">
+					<label>F-5E Tiger II</label>
+					<enabled type="bool">true</enabled>
+
+					<item>
+						<label>Autostart</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/start-idling</property>
+						</binding>
+					</item>
+
+					<item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+
+					<item n="2">
+						<label>Reload Gun</label>
+						<binding>
+							<command>nasal</command>
+							<script>guns.reload_Cannon()</script>
+						</binding>
+					</item>
+					
+					<item>
+						<label>Landing Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/landing-light</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/landing-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+
+					<item>
+						<label>Navigation Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/nav-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/nav-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+
+					<item>
+						<label>Dorsal Formation Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/strobe</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/strobe</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+
+					<item>
+						<label>Beacon Lights On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/beacon</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/beacon</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+
+					<item>
+						<label>Taxi Light On/Off</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/switches/taxi-lights</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>controls/lighting/taxi-light</property>
+						</binding>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/sound/switch</property>
+						</binding>
+					</item>
+
+				</menu>
+			</default>
+		</menubar>
+
+		<systems>
+		
+			<instrumentation>
+				<path>Aircraft/TigerII-JSB/Systems/instrumentation.xml</path>
+			</instrumentation>
+
+			<autopilot>
+				<path>Aircraft/TigerII-JSB/Systems/SYS8_1_autopilot.xml</path>
+			</autopilot>
+
+			<!-- autopilot>
+				<path>Aircraft/TigerII-JSB/Systems/autopilot5.xml</path>
+			</autopilot -->
+		</systems>
+
+		<multiplay>
+
+			<chat_display>1</chat_display>
+
+			<generic> 
+
+				<!--><int n="0" alias="/sim/crashed" /><-->
+		  
+				<!-- Nav lights on -->
+				<int n="0" alias="/controls/lighting/whiteSwitch" />
+				<int n="0" alias="/controls/lighting/navSwitch" />
+				<!-- Beacon on -->
+				<int n="1" alias="/controls/lighting/beaconSwitch" />
+				<!-- Strobe on -->
+				<int n="1" alias="/controls/lighting/strobeSwitch" />
+				<!-- Landing lights on -->
+				<int n="2" alias="/controls/lighting/landingSwitch" />
+				<!-- Taxi light on -->
+				<int n="3" alias="/controls/lighting/taxiSwitch" />
+	  
+				<!-- Engine Status -->
+				<int n="5" alias="/engines/engine[0]/state" />
+				<int n="6" alias="/engines/engine[1]/state" />
+				<int n="7" alias="/sim/crashed" />
+	          
+				<float n="0" alias="/fdm/jsbsim/systems/caopy/command"/>
+				<float n="1" alias="/instrumentation/doors/passenger/position-norm"/> 
+				<float n="2" alias="/surface-positions/left-flap-pos-norm"/>
+				<float n="3" alias="/surface-positions/right-flap-pos-norm"/>
+				<float n="4" alias="/sim/model/nozzle-animation"/>
+				<float n="8" alias="/engines/engine[0]/afterburner" /> <!-- Reheat Left Engine -->
+				<float n="9" alias="/engines/engine[1]/afterburner" /> <!-- Reheat Right Engine -->
+			
+			</generic>
+		</multiplay>
+
+		<ai>
+			<scenario>refueling_demo</scenario>
+			<scenario>
+				<path>Aircraft/TigerII-JSB/AI/EGOD_arrestor_cables.xml</path>
+			</scenario>
+		</ai>
+
+		<!-- turns off GA tower communications -->
+		<ATC>
+			<enabled type="bool">false</enabled>
+		</ATC>
+
+		<!-- turns off GA traffic -->
+		<ai-traffic>
+			<enabled type="bool">false</enabled>
+		</ai-traffic>
+
+	</sim>
+	<!-- END OF SIM -->
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name>Forward Cell</name>
+				<tank-num type="int">0</tank-num>
+				<level-gal_us archive="y">118</level-gal_us>
+			</tank>
+			<tank n="1">
+				<name>Center Cell</name>
+				<tank-num type="int">1</tank-num>
+				<level-gal_us archive="y">86</level-gal_us>
+			</tank>
+			<tank n="2">
+				<name>Aft Cell</name>
+				<tank-num type="int">2</tank-num>
+				<level-gal_us archive="y">64.4</level-gal_us>
+			</tank>
+		</fuel>
+	</consumables>
+
+	<!-- Payload -->
+	<!-- #### -->
+
+	<controls>
+
+		<engines>
+			<engine n="0">
+				<rpm>0</rpm>
+				<running>false</running>
+			</engine>
+			<engine n="1">
+				<rpm>0</rpm>
+				<running>false</running>
+			</engine>
+		</engines>
+
+		<flight>
+			<flaps>0.0</flaps>
+			<elevator-trim>-0.2</elevator-trim>
+		</flight>
+
+		<gear>
+			<brake-parking type="bool">1</brake-parking>
+		</gear>
+
+		<fuel>
+			<qty-selector type="int">1</qty-selector>
+			<external-transfer type="bool">true</external-transfer>
+		</fuel>
+		
+		<lighting>
+			<instruments-norm type="double">0.8</instruments-norm>
+			<landing-lights type="bool">false</landing-lights>
+			<beacon type="bool">false</beacon>
+			<strobe type="bool">false</strobe>
+			<nav-lights type="bool">false</nav-lights>
+			<cabin-lights type="bool">false</cabin-lights>
+			<wing-lights type="bool">false</wing-lights>
+			<taxi-light type="bool">false</taxi-light>
+			<instrument-lights type="bool">false</instrument-lights>
+		</lighting>
+		
+		<switches>
+			<flashing-beacon type="bool">false</flashing-beacon>
+			<landing-light type="bool">false</landing-light>
+			<beacon type="bool">false</beacon>
+			<strobe type="bool">false</strobe>
+			<strobe-lights type="bool">false</strobe-lights>
+			<nav-lights type="bool">false</nav-lights>
+			<taxi-lights type="bool">false</taxi-lights>
+		</switches>
+
+		<armament>
+			<gunsight>
+				<power-on type="bool">true</power-on>
+				<intensity type="double">0.3</intensity>
+			</gunsight>
+			<master-arm type="bool">false</master-arm>
+		</armament>
+
+	</controls>
+
+	<engines>
+		<engine n="0">
+			<running>false</running>
+		</engine>
+		<engine n="1">
+			<running>false</running>
+		</engine>
+	</engines>
+
+	<!-- custom keyboard -->
+	<input>
+		<keyboard>
+
+			<key n="81">
+				<name>Shift-Q</name>
+				<desc>Fuel Cutoff Switch or Lever.</desc>
+				<binding>
+					<condition>
+						<property>/sim/input/selected/engine[0]</property>
+					</condition>
+					<command>property-toggle</command>
+					<property>/controls/engines/engine[0]/cutoff</property>
+				</binding>
+				<binding>
+					<condition>
+						<property>/sim/input/selected/engine[1]</property>
+					</condition>
+					<command>property-toggle</command>
+					<property>/controls/engines/engine[1]/cutoff</property>
+				</binding>
+			</key>
+			
+			
+			<key n="108">
+				<name>l</name>
+				<desc>extend nose gear strut</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>fdm/jsbsim/systems/nose_lift/strut-cmd</property>
+				</binding>
+			</key>
+
+
+			<key n="109">
+				<name>m</name>
+				<desc>engage nose wheel steering</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/NWS/engaged</property>
+					<value>1</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>fdm/jsbsim/systems/NWS/engaged</property>
+						<value>0</value>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="110">
+				<name>n</name>
+				<desc>Toggle tailhook.</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+				</binding>
+			</key>
+
+			<key n="67">
+				<name>shift-c</name>
+				<desc>open canopy</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>instrumentation/doors/crew/position-norm</property>
+					<value>0.00</value>
+				</binding>
+			</key>
+
+			<key n="99">
+				<name>c</name>
+				<desc>close canopy</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>instrumentation/doors/crew/position-norm</property>
+					<value>1.00</value>
+				</binding>
+			</key>
+
+			<key n="2">
+				<name>ctrl-b</name>
+				<desc>speedbrake</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>controls/flight/speedbrake</property>
+					<value>0.00</value>
+					<value>1.00</value>
+				</binding>
+			</key>
+
+			<key n="100">
+				<name>d</name>
+				<desc>Deploy braking chute</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/chute/deploy</property>
+					<value type="int">1</value>
+				</binding>
+			</key>
+
+			<key n="106">
+				<name>j</name>
+				<desc>jettison braking chute</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/chute/deploy</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/flight/chute_jettisoned</property>
+					<value type="int">1</value>
+				</binding>
+			</key>
+
+			<key n="110">
+				<name>n</name>
+				<desc>Toggle tailhook.</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+				</binding>
+			</key>
+
+			<key n="115">
+				<name>s</name>
+				<desc>Cannon</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>true</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>false</value>
+					</binding> 
+				</mod-up>
+			</key>
+  
+			<key n="83">
+				<name>S</name>
+				<desc>Toggle starter valves.</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/engines/engine[0]/starter</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/engines/engine[1]/starter</property>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>null</command>
+					</binding>
+				</mod-up>
+			</key>
+    
+			<key n="101">
+				<name>e</name>
+				<desc>Release selected store(s)</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/release</property>
+					<value>1</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>fdm/jsbsim/systems/armament/release</property>
+						<value>0</value> 
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="48">
+				<name>0</name>
+				<desc>De-select All Stations</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station1/selected</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station2/selected</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station3/selected</property>
+					<value type="int">0</value>
+				</binding>
+			</key>
+
+			<key n="49">
+				<name>1</name>
+				<desc>Select Stations 1 and 5 exclusively</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station1/selected</property>
+					<value type="int">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station2/selected</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station3/selected</property>
+					<value type="int">0</value>
+				</binding>
+			</key>
+
+			<key n="50">
+				<name>2</name>
+				<desc>Select Stations 2 and 4 exclusively</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station1/selected</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station2/selected</property>
+					<value type="int">1</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station3/selected</property>
+					<value type="int">0</value>
+				</binding>
+			</key>
+
+			<key n="51">
+				<name>3</name>
+				<desc>Select Station 3 exclusively</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station1/selected</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station2/selected</property>
+					<value type="int">0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station3/selected</property>
+					<value type="int">1</value>
+				</binding>
+			</key>
+
+			<key n="33">
+				<name>Shift 1</name>
+				<desc>Add Station 1</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station1/selected</property>
+					<value type="int">1</value>
+				</binding>
+			</key>
+
+			<key n="64">
+				<name>Shift 2</name>
+				<desc>Add Station 2</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station2/selected</property>
+					<value type="int">1</value>
+				</binding>
+			</key>
+
+			<key n="35">
+				<name>Shift 3</name>
+				<desc>Add Station 3</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>fdm/jsbsim/systems/armament/station3/selected</property>
+					<value type="int">1</value>
+				</binding>
+			</key>    
+
+			<!-- Radar test code -->
+			<key n="14">
+				<name>Ctrl-n</name>
+				<desc>Toggles Radar RWS / TWS AUTO Modes</desc>
+				<binding>
+					<command>nasal</command>
+					<script>radar.radar_mode_toggle()</script>
+				</binding>
+			</key>
+			<key n="69">
+				<name>E</name>
+				<desc>Decrease Radar Range</desc>
+				<binding>
+					<command>nasal</command>
+					<script>radar.radar_range_control(-1);</script>
+				</binding>
+			</key>
+			<key n="82">
+				<name>R</name>
+				<desc>Increase Radar Range</desc>
+				<binding>
+					<command>nasal</command>
+					<script>radar.radar_range_control(1);</script>
+				</binding>
+			</key>
+			<key n="113">
+				<name>q</name>
+				<desc>Toggle radar standby mode</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>instrumentation/radar/radar-standby</property>
+				</binding>
+			</key>
+
+
+		</keyboard>
+	</input>
+    
+	<!-- Autopilot initialization -->
+	<autopilot>
+
+		<settings>
+			<kts-mach-select type="string">kts</kts-mach-select>
+			<max-pitch type="float"> 15.0</max-pitch>
+			<min-pitch type="float">-10.0</min-pitch>
+			<bank-angle-limit-deg type="int">65</bank-angle-limit-deg>
+		</settings>
+
+		<internal>
+			<target-pitch-deg type="float">0.00</target-pitch-deg>
+			<max-pitch type="float"> 15.0</max-pitch>
+			<min-pitch type="float">-10.0</min-pitch>
+		</internal>
+
+	</autopilot>
+
+	<systems>
+		<refuel>
+			<type>probe</type>
+		</refuel>
+	</systems>
+
+	<fdm>
+		<jsbsim>
+			<systems>
+				<dump>
+					<armed type="double">0</armed>
+				</dump>
+				<hook>
+					<tailhook-cmd-norm type="double">0</tailhook-cmd-norm>
+				</hook>
+				<NWS>
+					<engaged type="double">0</engaged>
+				</NWS>
+				<nose_lift>
+					<strut-cmd type="double">0</strut-cmd>
+				</nose_lift>	
+				<radar>
+					<range type="int">40</range>
+				</radar>
+				<armament>
+					<station1>
+						<selected type="int">0</selected>
+					</station1>
+					<station2>
+						<selected type="int">0</selected>
+					</station2>
+					<station3>
+						<selected type="int">1</selected>
+					</station3>
+					<station4>
+						<selected type="int">0</selected>
+					</station4>
+					<station5>
+						<selected type="int">0</selected>
+					</station5>
+					<bomb1>
+						<released type="double">0</released>
+					</bomb1>
+					<bomb2>
+						<released type="double">0</released>
+					</bomb2>
+					<bomb3>
+						<released type="double">0</released>
+					</bomb3>
+					<bomb4>
+						<released type="double">0</released>
+					</bomb4>
+					<bomb5>
+						<released type="double">0</released>
+					</bomb5>
+					<bomb6>
+						<released type="double">0</released>
+					</bomb6>
+				</armament>
+
+			</systems>
+		</jsbsim>
+	</fdm>
+
+	<instrumentation>
+
+		<marker-beacon>
+			<volume type="double" archive="y">0.0</volume>
+		</marker-beacon>
+
+		<rdmi-mode type="int">0</rdmi-mode>
+		<!-- 0=TAC, 1=VOR, 2=ADF -->
+
+		<!-- RADAR code test -->
+		<radar>
+			<range type="int">40</range>
+		</radar>
+
+		<rwr>
+			<display-lighting-intens type="double">0.4</display-lighting-intens>
+			<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+		</rwr>
+
+		<ecm>
+			<on-off type="bool">true</on-off>
+		</ecm>
+
+	</instrumentation>
+
+	<nasal>
+		<doors>
+			<file>Aircraft/TigerII-JSB/Nasal/doors.nas</file>
+		</doors>
+
+		<f5e>
+			<file>Aircraft/TigerII-JSB/Nasal/f5e.nas</file>			 
+		</f5e>
+		
+		<lights>
+			<file>Aircraft/TigerII-JSB/Nasal/Lights.nas</file>
+		</lights>
+
+		<guns>
+			<file>Aircraft/TigerII-JSB/Nasal/weapons.nas</file>
+			<file>Aircraft/TigerII-JSB/Nasal/revi.nas</file>
+		</guns>
+		
+		<!-- <canopy>
+			<file>Aircraft/TigerII-JSB/Nasal/canopy.nas</file>
+		</canopy> -->
+
+		<!--<pilot_g>
+			<file>Aircraft/TigerII-JSB/Nasal/pilot-g.nas</file>
+		</pilot_g>
+
+		<aar>
+			<file>Aircraft/TigerII-JSB/Nasal/aar.nas</file>
+		</aar>-->
+
+		<livery>
+			<file>Aircraft/TigerII-JSB/Nasal/livery.nas</file>
+		</livery>
+
+		<!--
+		<limits>
+			<file>Aircraft/TigerII-JSB/Nasal/limits.nas</file>
+		</limits>
+		-->
+
+		<!--<aar>
+			<file>Aircraft/TigerII-JSB/Nasal/aar.nas</file>
+		</aar>
+
+		<walk>
+			<file>Aircraft/TigerII-JSB/Nasal/walk.nas</file>
+		</walk>
+
+		<chronograph>
+			<file>Aircraft/TigerII-JSB/Nasal/chronograph.nas</file>
+		</chronograph>
+
+		<radar>
+			<file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
+		</radar>
+
+		<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>-->
+	</nasal>
+
+	<limits>
+		<max-flap-extension-speed>
+			<flaps>0.100</flaps>
+			<speed>941</speed>
+		</max-flap-extension-speed>
+
+		<max-flap-extension-speed>
+			<flaps>0.151</flaps>
+			<speed>917</speed>
+		</max-flap-extension-speed>
+
+		<max-flap-extension-speed>
+			<flaps>0.490</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+
+		<max-flap-extension-speed>
+			<flaps>0.700</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+
+		<max-flap-extension-speed>
+			<flaps>1.000</flaps>
+			<speed>200</speed>
+		</max-flap-extension-speed>
+
+		<vne>941</vne>
+
+		<max-gear-extension-speed>270</max-gear-extension-speed>
+
+		<max-positive-g> 9.1</max-positive-g>
+		<max-negative-g>-9.1</max-negative-g>
+
+	</limits>
+
+
+</PropertyList>
+

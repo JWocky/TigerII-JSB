@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Default</name>
+				<texture>Liveries/fuselage.png</texture>
+			</livery>
+			<wings>
+				<name type="string">Default</name>
+				<texture>Liveries/wings.png</texture>
+			</wings>        
+			<turbine>
+				<name type="string">Default</name>
+				<texture>Liveries/turbine.png</texture>
+			</turbine> 
+			<fueltk>
+				<name type="string">Default</name>
+				<texture>Liveries/fueltank.png</texture>
+			</fueltk> 
+		</model>
+	</sim>
+</PropertyList>
