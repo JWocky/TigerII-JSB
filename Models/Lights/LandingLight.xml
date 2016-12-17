@@ -24,6 +24,7 @@
 		<object-name>LandingLightCone</object-name> <!-- uncomment for fake non-rembrandt cones -->
 		<condition>
 			<and>
+				<property>controls/switches/landing-light</property>
 				<property>lightpack/landing-lights-intensity</property>
 				<not>
 					<property>sim/crashed</property>
