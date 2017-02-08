@@ -1210,8 +1210,8 @@ in the F-5E
 		</limits>
 		-->
 
-		<!--<aar>
-			<file>Aircraft/TigerII-JSB/Nasal/aar.nas</file>
+		<aar>
+			<file>Aircraft/TigerII-JSB/Nasal/SYS9_aar.nas</file>
 		</aar>
 
 		<walk>
